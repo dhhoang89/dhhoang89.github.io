@@ -5,54 +5,147 @@
     </title>
     <script type="text/javascript" src="https://player.wowza.com/player/latest/wowzaplayer.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style type="text/css">
-        body {
-        margin: 0;
-        padding: 0;
-        font: 75%/140% Arial, Helvetica, sans-serif;
-        color: #000;
-        background: #333;
-        }
-        #header {
-        background: url(/App_Themes/Styles/img/block_primary_hdr.gif) no-repeat #911618;
-        height: 21px;
-        padding: 5px 10px 0 10px;
-        font-size: 120%;
-        color: #fff;
-        }
-        #player {
-        background: #eee;
-        padding: 10px;
-        text-align: center;
-        }
-  
-        </style>
-  </head>
-  <body>
-
-    <div id="header">
-        <div id="channel-title">
-        24/7 - English
-        </div>
-        </div>
-        <div id="playerElement" style="width: 490px; height: 42px; margin: 20px"></div>
-
-
-	<script type="text/javascript">
-	WowzaPlayer.create('playerElement',
-		{
-        "license": "PLAY1-dEdZ6-nkNR4-B94C7-uZ66c-Djhay",
-        "title": '24/7 - English',
-        "description": "",
-        "sourceURL": 'https://5a6872aace0ce.streamlock.net/nghevov247/vov247.stream_aac/playlist.m3u8',
-		"autoPlay":false,
-		"mute":false,
-		"loop":false,
-		"audioOnly":false,
-		"uiShowQuickRewind":true,
-		"uiQuickRewindSeconds":"30"
-		}
-	);
-	</script>
+   <style type="text/css">
+body {
+margin: 0;
+padding: 0;
+font: 75%/140% Arial, Helvetica, sans-serif;
+color: #000;
+background: #333;
+}
+#header {
+background: url(/App_Themes/Styles/img/block_primary_hdr.gif) no-repeat #911618;
+height: 21px;
+padding: 5px 10px 0 10px;
+font-size: 120%;
+color: #fff;
+}
+#player {
+background: #eee;
+padding: 10px;
+text-align: center;
+}
+#footer {
+background: #333;
+padding: 5px 10px;
+color: #fff;
+overflow: hidden;
+float: left;
+}
+#footer label {
+font-weight: bold;
+display: block;
+margin-bottom: 5px;
+}
+#footer ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#footer li {
+list-style: none;
+float: left;
+margin: 0 5px 5px 0;
+font-size: 0.9em;
+font-family: Tahoma, Geneva, sans-serif;
+}
+#footer li a {
+display: block;
+background: #6a5849;
+padding: 3px 5px;
+text-decoration: none;
+color: #fff;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+cursor: pointer;
+}
+#footer li a:hover {
+background: #911618;
+}
+</style>
+<script>
+(function (i, s, o, g, r, a, m) {
+i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+(i[r].q = i[r].q || []).push(arguments)
+}, i[r].l = 1 * new Date(); a = s.createElement(o),
+m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-19805285-3', 'auto');
+ga('create', 'UA-97237969-1', 'auto', 'clientTracker');
+ga('send', 'pageview');
+ga('clientTracker.send', 'pageview');
+</script>
+</head>
 <body>
+<div id="header">
+<div id="channel-title">
+24/7 - English
+</div>
+</div>
+<div id="playerElement" style="width: 490px; height: 42px; margin: 20px"></div>
+<div id="footer">
+<ul class="channel">
+<li><a href="/en-US/RadioPlayer.vov?c=channel5">VOV5</a></li>
+<li><a href="/en-US/RadioPlayer.vov?c=channel247">24/7 - English</a></li>
+</ul>
+</div>
+<script type="text/javascript">
+WowzaPlayer.create("playerElement",
+{
+"license": "PLAY1-dEdZ6-nkNR4-B94C7-uZ66c-Djhay",
+"title": '24/7 - English',
+"description": "",
+"sourceURL": 'https://5a6872aace0ce.streamlock.net/nghevov247/vov247.stream_aac/playlist.m3u8',
+"autoPlay": true,
+"volume": "75",
+"mute": false,
+"loop": false,
+"audioOnly": true,
+"uiShowQuickRewind": true,
+"uiQuickRewindSeconds": "30"
+}
+).play();
+function playVov5() {
+$("#channel-title").text("Asia - Africa - Middle East");
+showlivestream({
+'container_id': 'playerElement',
+'stream_file': 'vov5',
+'stream_html5': 'https://5a6872aace0ce.streamlock.net/nghevov5/vov5.stream_aac/playlist.m3u8',
+'stream_width': '100%',
+'stream_height': 30
+});
+}
+function playVov247() {
+$("#channel-title").text("24/7 - English");
+showlivestream({
+'container_id': 'playerElement',
+'stream_file': 'vov247',
+'stream_title': '24/7 - English',
+'stream_html5': 'https://5a6872aace0ce.streamlock.net/nghevov247/vov247.stream_aac/playlist.m3u8',
+'stream_width': '100%',
+'stream_height': 30
+});
+}
+function showlivestream(params) {
+if (this.player != null) {
+this.player.destroy();
+}
+this.player = this.WowzaPlayer.create(params.container_id,
+{
+"license": "PLAY1-dEdZ6-nkNR4-B94C7-uZ66c-Djhay",
+"title": params.stream_title,
+"description": "",
+"sourceURL": params.stream_html5,
+"autoPlay": true,
+"volume": "75",
+"mute": false,
+"loop": false,
+"audioOnly": true,
+"uiShowQuickRewind": true,
+"uiQuickRewindSeconds": "30"
+}
+).play();
+}
+</script>
+</body>
 </html>
