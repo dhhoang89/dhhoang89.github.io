@@ -94,26 +94,7 @@ WowzaPlayer.create("playerElement",
 ).play();
 
 
-function showlivestream(params) {
-if (this.player != null) {
-this.player.destroy();
-}
-this.player = this.WowzaPlayer.create(params.container_id,
-{
-"license": "PLAY1-dEdZ6-nkNR4-B94C7-uZ66c-Djhay",
-"title": params.stream_title,
-"description": "",
-"sourceURL": params.stream_html5,
-"autoPlay": false,
-"volume": "75",
-"mute": false,
-"loop": false,
-"audioOnly": true,
-"uiShowQuickRewind": true,
-"uiQuickRewindSeconds": "30"
-}
-).play();
-}
+
 </script>
 </body>
 </html>
