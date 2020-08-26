@@ -1,85 +1,11 @@
-<html>
-  <head>
-    <title>
-      24/7 - English
-    </title>
-    <script type="text/javascript" src="https://player.wowza.com/player/latest/wowzaplayer.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <style type="text/css">
-body {
-margin: 0;
-padding: 0;
-font: 75%/140% Arial, Helvetica, sans-serif;
-color: #000;
-background: #333;
-}
-#header {
-background: url(/App_Themes/Styles/img/block_primary_hdr.gif) no-repeat #911618;
-height: 21px;
-padding: 5px 10px 0 10px;
-font-size: 120%;
-color: #fff;
-}
-#player {
-background: #eee;
-padding: 10px;
-text-align: center;
-}
-#footer {
-background: #333;
-padding: 5px 10px;
-color: #fff;
-overflow: hidden;
-float: left;
-}
-#footer label {
-font-weight: bold;
-display: block;
-margin-bottom: 5px;
-}
-#footer ul {
-list-style: none;
-margin: 0;
-padding: 0;
-}
-#footer li {
-list-style: none;
-float: left;
-margin: 0 5px 5px 0;
-font-size: 0.9em;
-font-family: Tahoma, Geneva, sans-serif;
-}
-#footer li a {
-display: block;
-background: #6a5849;
-padding: 3px 5px;
-text-decoration: none;
-color: #fff;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-cursor: pointer;
-}
-#footer li a:hover {
-background: #911618;
-}
-</style>
-
-</head>
-<body>
-<div id="header">
-<div id="channel-title">
-24/7 - English
-</div>
-</div>
-<div id="playerElement" style="width: 300px; height: 50px; margin: 30px"></div>
-<div id="footer">
-<ul class="channel">
-</ul>
-</div>
-<script type="text/javascript">
-WowzaPlayer.create("playerElement",
-{
-"license": "PLAY1-dEdZ6-nkNR4-B94C7-uZ66c-Djhay",
+<HEAD>
+	<script type="text/javascript" src="//player.wowza.com/player/latest/wowzaplayer.min.js"></script>
+</HEAD>
+<BODY>
+	<div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div>
+	<script type="text/javascript">
+	var myPlayer = WowzaPlayer.create('playerElement',{
+               "license": "PLAY1-dEdZ6-nkNR4-B94C7-uZ66c-Djhay",
 "title": '24/7 - English',
 "description": "",
 "sourceURL": 'https://5a6872aace0ce.streamlock.net/nghevov247/vov247.stream_aac/playlist.m3u8',
@@ -89,12 +15,7 @@ WowzaPlayer.create("playerElement",
 "loop": false,
 "audioOnly": true,
 "uiShowQuickRewind": true,
-"uiQuickRewindSeconds": "30"
-}
-).play();
-
-
-
-</script>
-</body>
-</html>
+"uiQuickRewindSeconds": "30"}
+         );
+	</script>
+</BODY>
