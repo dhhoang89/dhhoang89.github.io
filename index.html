@@ -1,32 +1,58 @@
 <html>
   <head>
     <title>
-      dhhoang89.github.io - Responsive
+      24/7 - English
     </title>
-    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="https://player.wowza.com/player/latest/wowzaplayer.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        body {
+        margin: 0;
+        padding: 0;
+        font: 75%/140% Arial, Helvetica, sans-serif;
+        color: #000;
+        background: #333;
+        }
+        #header {
+        background: url(/App_Themes/Styles/img/block_primary_hdr.gif) no-repeat #911618;
+        height: 21px;
+        padding: 5px 10px 0 10px;
+        font-size: 120%;
+        color: #fff;
+        }
+        #player {
+        background: #eee;
+        padding: 10px;
+        text-align: center;
+        }
+  
+        </style>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <h1> Rdang Vlog </h1>
-        <p>Sharing and Learning</p>
 
-      </div>
-      <div class="main">
-        <div class="content">
-          <h2> Hướng dẫn Responsive </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+    <div id="header">
+        <div id="channel-title">
+        24/7 - English
         </div>
-        <div class="sidebar">
-          <h2>Sidebar</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
         </div>
-      </div>
-    </div>
-  </body>
+        <div id="playerElement" style="width: 490px; height: 42px; margin: 20px"></div>
+
+
+	<script type="text/javascript">
+	WowzaPlayer.create('playerElement',
+		{
+        "license": "PLAY1-dEdZ6-nkNR4-B94C7-uZ66c-Djhay",
+        "title": '24/7 - English',
+        "description": "",
+        "sourceURL": 'https://5a6872aace0ce.streamlock.net/nghevov247/vov247.stream_aac/playlist.m3u8',
+		"autoPlay":true,
+		"mute":true,
+		"loop":false,
+		"audioOnly":false,
+		"uiShowQuickRewind":true,
+		"uiQuickRewindSeconds":"30"
+		}
+	);
+	</script>
+<body>
 </html>
